@@ -11,10 +11,8 @@ import java.io.File;
 import java.util.Objects;
 
 public abstract class BaseTest {
-
     private static WebDriver driver;
 
-    //? Геттер для ведрайвера
     public static WebDriver getDriver() {
         return driver;
     }

@@ -127,7 +127,7 @@ public class SearchTest extends BaseTest {
 
 
        /*
-               Эту логику переносим в SearchResultsPage
+               Эта логика инкапсулирована в SearchResultsPage
        WebElement resRow = driver.findElement(By.xpath("//div[@class='g']//h3"));
         Assertions.assertThat(resRow.isDisplayed())
                 .as("Элемент не виден не экране").isTrue();
