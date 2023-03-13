@@ -46,3 +46,5 @@ public class SearchResultPage extends BasePage{
                 .as("НЕ ТОТ КЛАСС").contains(expected);
     }
 }
+
+//toDO: 006

@@ -6,12 +6,16 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import steps.SearchSteps;
 
 import java.io.File;
 import java.util.Objects;
 
 public abstract class BaseTest {
     private static WebDriver driver;
+    //начальный шаг, с которово начинаются тесты
+    SearchSteps steps;
+
 
     public static WebDriver getDriver() {
         return driver;
@@ -24,6 +28,8 @@ public abstract class BaseTest {
         System.setProperty("webdriver.edge.driver", file.getAbsolutePath());
         driver = new EdgeDriver();
         driver.get("https://www.google.com");
+
+        steps = new SearchSteps(); //начало выполнения теста
     }
 
     //Вызовится после прохождения всех тестов

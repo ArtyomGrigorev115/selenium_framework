@@ -140,5 +140,13 @@ public class SearchTest extends BaseTest {
 
     }
 
+    /*Тесты с использованием слоя steps. Несколько шагов объединили в один*/
+    @Test(dataProvider = "dataProvider")
+    public void openGoogleComInEdgePageObjectAndStepsPatternTest(String text) throws InterruptedException {
+        steps.executeSearchByKeyword(text)
+                .verifyThatTopResultContainsCorrectText("The Selenium Browser Automation Project")
+                .verifyThatTopResultContainsProperAttributeText("LC20lb");
+
+    }
 
 }
