@@ -7,6 +7,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import steps.SearchSteps;
+import utils.Browser;
+import utils.DriverFactory;
 
 import java.io.File;
 import java.util.Objects;
@@ -24,9 +26,8 @@ public abstract class BaseTest {
     //отработает один раз для всего класса
     @BeforeClass
     public void setUp() {
-        File file = new File("E:\\project\\testing\\test_framework\\src\\test\\resources\\msedgedriver.exe");
-        System.setProperty("webdriver.edge.driver", file.getAbsolutePath());
-        driver = new EdgeDriver();
+
+        driver = DriverFactory.getDriver(Browser.EDGE);
         driver.get("https://www.google.com");
 
         steps = new SearchSteps(); //начало выполнения теста
