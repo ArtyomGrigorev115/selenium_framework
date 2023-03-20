@@ -9,6 +9,7 @@ import org.testng.annotations.DataProvider;
 import steps.SearchSteps;
 import utils.Browser;
 import utils.DriverFactory;
+import utils.PropertyReader;
 
 import java.io.File;
 import java.util.Objects;
@@ -27,8 +28,11 @@ public abstract class BaseTest {
     @BeforeClass
     public void setUp() {
 
-        driver = DriverFactory.getDriver(Browser.EDGE);
-        driver.get("https://www.google.com");
+       // driver = DriverFactory.getDriver(Browser.EDGE);
+       // driver.get("https://www.google.com");
+
+        driver = DriverFactory.getDriver(PropertyReader.getBrowser());
+        driver.get(PropertyReader.getUrl());
 
         steps = new SearchSteps(); //начало выполнения теста
     }
