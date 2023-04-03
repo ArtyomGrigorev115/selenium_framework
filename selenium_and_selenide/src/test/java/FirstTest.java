@@ -1,14 +1,16 @@
-import org.junit.Test;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.Test;
 
 import java.io.File;
 
 public class FirstTest {
 
     private final static String DRIVER_PATH = "E:\\project\\testing\\test_framework\\selenium_and_selenide\\src\\test\\resources\\";
+
 
     @Test
     public void testSearchGoogle() throws InterruptedException {
